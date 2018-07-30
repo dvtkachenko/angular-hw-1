@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-6 mt-2" *ngFor="let item of items; let i = index">
+        <div class="card">
+          <div class="card-body"> 
+            <h5 class="card-title"> {{ item.name }} </h5>
+            <p class="card-text"> Price : {{ item.price }} </p>
+            <p class="card-text"> Info : {{ item.info }} </p>
+            <button class="btn btn-outline-info m-1" (click)="item.isReviewShowed = !item.isReviewShowed"> 
+                    {{ item.isReviewShowed ? 'Hide reviews' : 'Show reviews' }}</button>
+            <button class="btn btn-outline-info m-1" (click)="deleteItem(i)"> Delete good </button>
+            <div class="mt-2" *ngIf="item.isReviewShowed">
+              <div class="card-text" *ngFor="let review of item.reviews">
+                  <h6> Review : </h6>
+                  <p> Username : {{ review.userName }}</p>
+                  <p> Text : {{ review.text }}</p>
+                  <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="alert alert-info mt-2" *ngIf="!items.length">
+    There are no any goods in the list !
+  </div>
+</div>
