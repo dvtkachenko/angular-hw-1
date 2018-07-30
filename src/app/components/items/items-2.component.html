@@ -1,0 +1,11 @@
+<ul>
+    <li *ngFor="let item of items">
+        <span> {{ item.name }}, {{ item.price }}</span>
+        <ul>
+            <li *ngFor="let review of item.reviews">
+                <span> {{ review.name }} </span>
+                <p> {{ review.text }} </p>
+            </li>
+        </ul>
+    </li>
+</ul>

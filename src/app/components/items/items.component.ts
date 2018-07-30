@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from './item.model';
+import { Item } from './model/item.model';
 
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
+//  templateUrl: './items-2.component.html',
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
